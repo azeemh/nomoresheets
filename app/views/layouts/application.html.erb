@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nomoresheets</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <%= nav_bar responsive: true, brand: "Brand Ambassadors" do %>
+      <%= menu_group do %>
+          <%= menu_item "Smurves", smurves_path %>
+          <%= menu_item "Real Accounts", real_accounts_path %>
+      <% end %>
+  <% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

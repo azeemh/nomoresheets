@@ -1,0 +1,125 @@
+<%= form_for @real_account, :html => { :class => "form-horizontal real_account" } do |f| %>
+
+  <% if @real_account.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@real_account.errors.count, "error") %> prohibited this real_account from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @real_account.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :startdate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :startdate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:startdate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ip, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ip, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ip) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :firstname, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :firstname, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:firstname) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :lastname, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :lastname, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:lastname) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fb_email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fb_email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fb_email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fb_pw, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fb_pw, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fb_pw) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fb_profile_link, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :fb_profile_link, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:fb_profile_link) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :paypal_email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :paypal_email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:paypal_email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :referrer_paypal, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :referrer_paypal, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:referrer_paypal) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:phone) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :disbursement_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :disbursement_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:disbursement_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :disbursement_amount, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :disbursement_amount, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:disbursement_amount) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :skype_username, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :skype_username, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:skype_username) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :notes, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:notes) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                real_accounts_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,2 @@
+class RealAccount < ApplicationRecord
+end

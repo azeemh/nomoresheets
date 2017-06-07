@@ -1,0 +1,66 @@
+<%- model_class = Smurf -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table id ="myTable" class="table table-striped tablesorter">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:startdate) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:ip) %></th>
+      <th><%= model_class.human_attribute_name(:firstname) %></th>
+      <th><%= model_class.human_attribute_name(:lastname) %></th>
+      <th><%= model_class.human_attribute_name(:login) %></th>
+      <th><%= model_class.human_attribute_name(:password) %></th>
+      <th><%= model_class.human_attribute_name(:cardtype) %></th>
+      <th><%= model_class.human_attribute_name(:creditcardnumber) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:paypalemail) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @smurves.each do |smurf| %>
+      <tr>
+        <td><%= link_to smurf.id, smurf_path(smurf) %></td>
+        <td><%= smurf.startdate %></td>
+        <td><%= smurf.status %></td>
+        <td><%= smurf.ip %></td>
+        <td><%= smurf.firstname %></td>
+        <td><%= smurf.lastname %></td>
+        <td><%= smurf.login %></td>
+        <td><%= smurf.password %></td>
+        <td><%= smurf.cardtype %></td>
+        <td><%= smurf.creditcardnumber %></td>
+        <td><%= smurf.email %></td>
+        <td><%= smurf.paypalemail %></td>
+        <td><%= smurf.notes %></td>
+        <td><%=l smurf.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      smurf_path(smurf), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_smurf_path(smurf), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      smurf_path(smurf),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_smurf_path,
+            :class => 'btn btn-primary' %>
+
+<script>
+$(function(){
+  $("#myTable").tablesorter();
+});
+</script>

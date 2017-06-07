@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startdate: 2017-06-06
+  ip: MyString
+  firstname: MyString
+  lastname: MyString
+  fb_email: MyString
+  fb_pw: MyString
+  fb_profile_link: MyString
+  paypal_email: MyString
+  referrer_paypal: MyString
+  phone: 1
+  disbursement_date: 2017-06-06
+  disbursement_amount: 9.99
+  skype_username: MyString
+  notes: MyText
+
+two:
+  startdate: 2017-06-06
+  ip: MyString
+  firstname: MyString
+  lastname: MyString
+  fb_email: MyString
+  fb_pw: MyString
+  fb_profile_link: MyString
+  paypal_email: MyString
+  referrer_paypal: MyString
+  phone: 1
+  disbursement_date: 2017-06-06
+  disbursement_amount: 9.99
+  skype_username: MyString
+  notes: MyText
