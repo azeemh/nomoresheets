@@ -12,6 +12,15 @@
       <%= menu_group do %>
           <%= menu_item "Smurves", smurves_path %>
           <%= menu_item "Real Accounts", real_accounts_path %>
+          <%= menu_item "About Us", about_path %>
+      <% end %>
+      <%= menu_group pull: :right do %>
+        <% if logged_in? %>
+          <%= menu_item current_user.email %>
+          <%= menu_item "Sign out", sign_out_path %>
+        <% else %>
+          <%= menu_item "Sign in", sign_in_path %>
+        <% end %>
       <% end %>
   <% end %>
 

@@ -4,7 +4,11 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+
 Bundler.require(*Rails.groups)
+
+ENV["LOCKUP_CODEWORD"] = 'tenacity'
+ENV["LOCKUP_HINT"] = 'the quality or fact of being very determined or persistant'
 
 module Nomoresheets
   class Application < Rails::Application

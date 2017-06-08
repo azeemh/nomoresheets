@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606190642) do
+ActiveRecord::Schema.define(version: 20170608142333) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "real_accounts", force: :cascade do |t|
     t.date "startdate"
@@ -46,6 +49,25 @@ ActiveRecord::Schema.define(version: 20170606190642) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "encrypted_password", limit: 128
+    t.string "session_token", limit: 128
+    t.datetime "current_sign_in_at"
+    t.string "current_sign_in_ip", limit: 128
+    t.datetime "last_sign_in_at"
+    t.string "last_sign_in_ip", limit: 128
+    t.integer "sign_in_count"
+    t.integer "failed_logins_count", default: 0
+    t.datetime "lock_expires_at"
+    t.datetime "last_access_at"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["password_reset_token"], name: "index_users_on_password_reset_token"
+    t.index ["session_token"], name: "index_users_on_session_token"
   end
 
 end

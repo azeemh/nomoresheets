@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Lockup::Engine, at: '/lockup'
   resources :real_accounts
   resources :smurves
   get "/home" => "pages#show", page: "home"
