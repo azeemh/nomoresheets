@@ -26,6 +26,13 @@ gem 'jquery-tablesorter'
 gem 'authenticate'
 gem 'lockup'
 
+gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+
+# Add this if you're using rbenv
+gem 'capistrano-rbenv', '~> 2.1'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
